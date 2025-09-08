@@ -6,12 +6,21 @@ Este proyecto de documentará fase por fase, desde lo mas básico a lo avanzado,
 **INDICE**
 - [1. Proyecto: Gestión de Biblioteca Digital](#1-proyecto-gestión-de-biblioteca-digital)
 	- [1.1. Instalación de Herramientas Necesarias](#11-instalación-de-herramientas-necesarias)
+	- [1.2. Cómo ejecutar el proyecto](#12-cómo-ejecutar-el-proyecto)
 - [2. Fases del Proyecto](#2-fases-del-proyecto)
 	- [2.1. Fase 1](#21-fase-1)
 		- [2.1.1. Estructura del Proyecto en la Fase 1](#211-estructura-del-proyecto-en-la-fase-1)
 		- [2.1.2. Creación de la Estructura Básica](#212-creación-de-la-estructura-básica)
+	- [2.2. Fase 2](#22-fase-2)
+		- [2.2.1. Estructura del Proyecto en la Fase 2](#221-estructura-del-proyecto-en-la-fase-2)
+		- [2.2.2. Métodos implementados](#222-métodos-implementados)
+	- [2.3. Fase 3](#23-fase-3)
+		- [2.3.1. Integración Lista Doble y BST](#231-integración-lista-doble-y-bst)
+		- [2.3.2. Funciones avanzadas](#232-funciones-avanzadas)
+		- [2.3.3. Funcionalidades disponibles desde el menú](#233-funcionalidades-disponibles-desde-el-menú)
 - [3. Anexos](#3-anexos)
 	- [3.1. Anexo 1: Configuración de llaves SSH en GitHub](#31-anexo-1-configuración-de-llaves-ssh-en-github)
+	- [3.2. Anexo 2: Diagrama con Mermaid](#32-anexo-2-diagrama-con-mermaid)
 
 
 ## 1.1. Instalación de Herramientas Necesarias  
@@ -75,9 +84,23 @@ git init
 git remote add origin HTTPS o SSH
 ```
 
+## 1.2. Cómo ejecutar el proyecto
+
+1. Abrir **Git Bash** o terminal en la carpeta `BibliotecaDigital`.  
+2. Ejecutar: 
+    
+```bash
+dotnet run
+```
+
+Seleccionar la opción deseada del menú y seguir las instrucciones.
+
+
 # 2. Fases del Proyecto
 
 ## 2.1. Fase 1
+
+En esta fase determinara las clases base para la escalabilidad y mejor desarrollo del codigo.
 
 - **Convención de Nombres:**
 Este proyecto utiliza PascalCase para clases, métodos y propiedades.
@@ -102,17 +125,6 @@ Biblioteca_Digital/
 │
 └── README.md                     # Documentación del proyecto
 ```
-
- - **Ejecución del Proyecto**
-  
-Abre una terminal en la carpeta BibliotecaDigital.
-
-Escribe el siguiente comando:
-
-```bash
-dotnet run
-```
-Esto compilará y ejecutará tu aplicación.
 
 ### 2.1.2. Creación de la Estructura Básica
 
@@ -154,6 +166,97 @@ RecorrerAtras() -> Recorre desde el último hasta el primero.
 BuscarLibro() -> Busca un libro en la lista por título.
 ```
 
+## 2.2. Fase 2
+
+En esta fase se implementa un **árbol binario de búsqueda (BST)** para mejorar la **búsqueda y organización** de los libros. 
+
+### 2.2.1. Estructura del Proyecto en la Fase 2
+
+```bash
+Biblioteca_digital/
+│
+├── BibliotecaDigital/            # Proyecto en C#
+│   ├── Program.cs                # Punto de entrada del programa
+│   ├── Libro.cs                  # Clase Libro con atributos
+│   ├── NodoLista.cs              # Clase Nodo de la lista doble
+│   ├── ListaDobleLibros.cs       # Clase Lista Doble con operaciones
+│   ├── NodoArbol.cs              # Clase Nodo de el BST
+│   ├── BSTLibros.cs              # Clase BST con operaciones
+│   ├── BibliotecaFunciones.cs    # Integra la Lista Doble con el BST
+│   └── BibliotecaDigital.csproj  # Configuración del proyecto
+│
+└── README.md                  # Documentación del proyecto
+```
+Se dejara un diagrama en Anexos para mayor entendimiento(Anexo 2).
+
+### 2.2.2. Métodos implementados  
+
+1. **BSTLibros** 
+   
+- **`InsertarLibroBST()`** -> Inserta libros en el árbol ordenados por título y, en caso de empate, por género.  
+- **`BuscarLibroBST()`** -> Localiza un libro por título.  
+- **`RecorrerEnOrden()`** -> Muestra los libros en orden alfabético.  
+- **`RecorrerPreOrden()`** -> Recorre la raíz primero, luego subárbol izquierdo y derecho.  
+- **`RecorrerPostOrden()`** -> Recorre subárboles antes de mostrar la raíz.  
+- **`EliminarLibroBST()`** -> Elimina un libro manteniendo la propiedad del árbol.  
+
+
+2. **Funciones avanzadas (con Lista Doble + BST)**  
+   
+- **`MostrarLibrosPorGenero()`** -> Muestra todos los libros de un género específico.  
+- **`PrestarLibro()`** -> Cambia el estado de un libro a *Prestado*.  
+- **`DevolverLibro()`** -> Cambia el estado de un libro de *Prestado* a *Disponible*.  
+- **`ReporteLibros()`** -> Genera un reporte separado de libros *Disponibles* y *Prestados*.  
+
+
+## 2.3. Fase 3
+
+En esta fase se realizó la integración de todas las piezas del proyecto: la Lista Doble y el Árbol Binario de Búsqueda (BST). También se añadieron libros de prueba, un menú interactivo y funciones avanzadas.
+
+### 2.3.1. Integración Lista Doble y BST
+
+La Lista Doble (ListaDobleLibros) se utiliza para almacenar todos los libros en orden de inserción, permitiendo recorrer hacia adelante y hacia atrás, además de eliminar o buscar libros de manera directa.
+
+El BST (BSTLibros) organiza los libros por título y género, permitiendo búsquedas y listados ordenados alfabéticamente.
+
+- **Ambas estructuras trabajan en conjunto:**
+
+	- Cuando se agrega un libro -> se inserta en la Lista Doble y también en el BST.
+	- Cuando se elimina un libro -> se borra de ambas estructuras.
+	- Cuando se presta o devuelve un libro -> el cambio de estado se refleja en ambas.
+
+De esta forma, evitamos duplicaciones o inconsistencias en los datos.
+
+### 2.3.2. Funciones avanzadas
+
+- **PrestarLibro()**
+Cambia el estado de un libro de Disponible -> Ocupado. Esto se hace tanto en la lista doble como en el BST, asegurando que el estado sea el mismo en cualquier recorrido.
+
+- **DevolverLibro()**
+Realiza la operación inversa, de Ocupado -> Disponible.
+
+- **MostrarLibroGenero()**
+Usa la lista doble para recorrer todos los libros y mostrar aquellos que pertenecen a un género específico (ejemplo: Terror, Ciencia Ficción).
+
+### 2.3.3. Funcionalidades disponibles desde el menú
+
+Se construyó un menú en consola con opciones numeradas que permiten probar todas las funciones.
+
+Al iniciar el programa se cargan automáticamente 25 libros de prueba de distintos generos.
+
+El usuario puede:
+
+1. **Agregar libro** -> Permite agregar libros nuevos, se inserta en la **Lista Doble** y en el **BST**.  
+2. **Buscar libro por título** -> Localiza un libro usando el **BST**.  
+3. **Mostrar todos los libros en orden alfabetico** -> Recorre el BST en orden (`InOrder`).  
+4. **Mostrar libros por género** -> Utiliza la **Lista Doble** para filtrar por género.  
+5. **Prestar libro** -> Cambia el estado de `Disponible` a `Ocupado` y `Prestado`.  
+6. **Devolver libro** -> Revertir el estado a `Disponible`.  
+7. **Eliminar libro** -> Elimina el libro tanto de la lista doble como del BST.  
+8. **Reporte de libros** -> Muestra libros disponibles y prestados.  
+9. **Salir** -> Termina la ejecución del programa.  
+
+Además, se agregó una función extra: limpieza de pantalla y pausa, de forma que el usuario debe presionar una tecla para continuar, haciendo la experiencia más clara y ordenada.
 
 # 3. Anexos
 
@@ -248,3 +351,6 @@ origin  git@github.com:tu-usuario/Biblioteca_digital.git (fetch)
 origin  git@github.com:tu-usuario/Biblioteca_digital.git (push)
 ```
 
+## 3.2. Anexo 2: Diagrama con Mermaid
+
+<img src="imagenes/Diagrama.png" alt="Diagrama del proyecto" style="display:block; margin:auto;" width="450">
