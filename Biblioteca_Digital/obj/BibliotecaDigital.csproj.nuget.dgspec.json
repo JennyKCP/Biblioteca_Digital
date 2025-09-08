@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\BibliotecaDigital\\BibliotecaDigital.csproj": {}
+    "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\Biblioteca_Digital\\BibliotecaDigital.csproj": {}
   },
   "projects": {
-    "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\BibliotecaDigital\\BibliotecaDigital.csproj": {
+    "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\Biblioteca_Digital\\BibliotecaDigital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\BibliotecaDigital\\BibliotecaDigital.csproj",
+        "projectUniqueName": "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\Biblioteca_Digital\\BibliotecaDigital.csproj",
         "projectName": "BibliotecaDigital",
-        "projectPath": "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\BibliotecaDigital\\BibliotecaDigital.csproj",
+        "projectPath": "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\Biblioteca_Digital\\BibliotecaDigital.csproj",
         "packagesPath": "C:\\Users\\usser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\BibliotecaDigital\\obj\\",
+        "outputPath": "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\Biblioteca_Digital\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\usser\\AppData\\Roaming\\NuGet\\NuGet.Config"
