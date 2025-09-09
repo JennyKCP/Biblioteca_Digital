@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\Biblioteca_Digital\\BibliotecaDigital.csproj",
+      "projectUniqueName": "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_Digital\\Biblioteca_Digital\\Biblioteca_Digital\\BibliotecaDigital.csproj",
       "projectName": "BibliotecaDigital",
-      "projectPath": "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\Biblioteca_Digital\\BibliotecaDigital.csproj",
+      "projectPath": "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_Digital\\Biblioteca_Digital\\Biblioteca_Digital\\BibliotecaDigital.csproj",
       "packagesPath": "C:\\Users\\usser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_digital\\Biblioteca_Digital\\obj\\",
+      "outputPath": "C:\\Users\\usser\\OneDrive\\Escritorio\\Biblioteca_Digital\\Biblioteca_Digital\\Biblioteca_Digital\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\usser\\AppData\\Roaming\\NuGet\\NuGet.Config"
